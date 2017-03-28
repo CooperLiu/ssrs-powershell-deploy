@@ -41,7 +41,7 @@ function Publish-SSRSSolution{
 " (?<path> [^"]* ) " , \s+
 "@
 
-	Get-Content -Path $Solution |
+	Get-Content -Path $Solution -Encoding UTF8 |
 		ForEach-Object {
 			if ($_ -match $SolutionProjectPattern) {
 				$ProjectPath = $SolutionRoot | Join-Path -ChildPath $Matches['path']

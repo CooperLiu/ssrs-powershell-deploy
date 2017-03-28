@@ -5,7 +5,7 @@ function New-SSRSReport (
 {
 	$script:ErrorActionPreference = 'Stop'
 
-	[xml]$Definition = Get-Content -Path $RdlPath
+	[xml]$Definition = Get-Content -Path $RdlPath -Encoding UTF8
 	$NsMgr = New-XmlNamespaceManager $Definition d
 
 	$RawDefinition = Get-Content -Encoding Byte -Path $RdlPath

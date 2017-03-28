@@ -14,7 +14,7 @@ function New-SSRSDataSet (
 
 	$Name =  [System.IO.Path]::GetFileNameWithoutExtension($RsdPath)
 	$RawDefinition = Get-Content -Encoding Byte -Path $RsdPath
-	[xml]$Rsd = Get-Content -Path $RsdPath
+	[xml]$Rsd = Get-Content -Path $RsdPath -Encoding UTF8
 	$properties = $null
 	$warnings = $null
 

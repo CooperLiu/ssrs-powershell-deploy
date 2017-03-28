@@ -19,7 +19,7 @@
 
 	Write-Verbose "Reading '$Configuration' config from '$Path'"
 
-	[xml]$Project = Get-Content -Path $Path
+	[xml]$Project = Get-Content -Path $Path -Encoding UTF8
 
 	$Config = $Project.SelectNodes('Project/Configurations/Configuration') |
 		Where-Object { $_.Name -eq $Configuration } |

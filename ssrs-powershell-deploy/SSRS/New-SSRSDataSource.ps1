@@ -12,7 +12,7 @@ function New-SSRSDataSource (
 
 	$Folder = Normalize-SSRSFolder -Folder $Folder
 
-	[xml]$Rds = Get-Content -Path $RdsPath
+	[xml]$Rds = Get-Content -Path $RdsPath -Encoding UTF8
 	$ConnProps = $Rds.RptDataSource.ConnectionProperties
 
 	$Definition = New-Object -TypeName SSRS.ReportingService2010.DataSourceDefinition

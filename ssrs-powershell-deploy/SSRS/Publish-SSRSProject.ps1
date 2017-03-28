@@ -53,7 +53,7 @@
 
 	$Path = $Path | Convert-Path
 	$ProjectRoot = $Path | Split-Path
-	[xml]$Project = Get-Content -Path $Path
+	[xml]$Project = Get-Content -Path $Path -Encoding UTF8
 
 
 
